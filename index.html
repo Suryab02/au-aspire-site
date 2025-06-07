@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Welcome Realtors</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <meta
+      name="description"
+      content="AU Aspire Silicon City - Luxury Apartments in Noida. 3BHK & 4BHK premium flats with top amenities. Booking Open!"
+    />
+    <meta
+      property="og:title"
+      content="AU Aspire Silicon City - Sector 76, Noida"
+    />
+    <meta
+      property="og:description"
+      content="Luxury Urban Living with Metro Connectivity. 3 & 4BHK Apartments. Price Starting ₹3.33 Cr."
+    />
+    <meta property="og:image" content="Images/og-preview.png" />
+    <style>
+      /* HERO & ANIMATIONS */
+      .bg-slide.active {
+        animation: zoomSlow 20s ease-in-out infinite alternate;
+      }
+      @keyframes zoomSlow {
+        from {
+          transform: scale(1);
+        }
+        to {
+          transform: scale(1.05);
+        }
+      }
+
+      .hero-title {
+        opacity: 0;
+        transform: translateY(20px);
+        animation: fadeInUp 1.2s ease-out forwards;
+        animation-delay: 0.5s;
+      }
+      @keyframes fadeInUp {
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .enquire-btn {
+        animation: pulse 2s infinite;
+      }
+      @keyframes pulse {
+        0% {
+          box-shadow: 0 0 0 0 rgba(179, 0, 0, 0.6);
+        }
+        70% {
+          box-shadow: 0 0 0 10px rgba(179, 0, 0, 0);
+        }
+        100% {
+          box-shadow: 0 0 0 0 rgba(179, 0, 0, 0);
+        }
+      }
+
+      .scroll-animate {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: all 0.6s cubic-bezier(0.36, 1.01, 0.32, 1) 0.1s;
+      }
+      .scroll-animate.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="page-container">
+      <div class="main-content">
+        <!-- Navbar -->
+        <nav class="navbar">
+          <div class="navbar-container">
+            <div class="logo">
+              <a href="#hero">
+                <img
+                  src="https://welcomerealtors.in/assets/img/logo-1.png"
+                  alt="Welcome Realtors Logo"
+                />
+              </a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle">
+              <i class="fa-solid fa-bars"></i>
+            </div>
+            <ul class="nav-links" id="nav-links">
+              <li>
+                <a href="#hero"><span>Home</span></a>
+              </li>
+              <li>
+                <a href="#price"><span>Price</span></a>
+              </li>
+              <li>
+                <a href="#siteplan"><span>Site Plan</span></a>
+              </li>
+              <li>
+                <a href="#amenities"><span>Amenities</span></a>
+              </li>
+              <li>
+                <a href="#gallery"><span>Gallery</span></a>
+              </li>
+              <li>
+                <a href="#location"><span>Location</span></a>
+              </li>
+              <li>
+                <a href="#tour"><span>Virtual Tour</span></a>
+              </li>
+              <li>
+                <a
+                  href="javascript:void(0);"
+                  id="downloadBrochureBtn"
+                  class="nav-brochure-link"
+                >
+                  <span>Brochure</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+        <!-- HERO SECTION -->
+        <section id="hero" class="booking-hero-slider">
+          <div class="slide-bg">
+            <img
+              src="https://welcomerealtors.in/assets/img/g-3.webp"
+              class="bg-slide active"
+            />
+            <img
+              src="https://welcomerealtors.in/assets/img/g-14.jpeg"
+              class="bg-slide"
+            />
+            <img
+              src="https://www.myhomeconstructions.com/wp-content/uploads/2024/12/691290436-vipina-web-banner.jpg"
+              class="bg-slide"
+            />
+            <div class="bg-overlay"></div>
+          </div>
+          <div class="hero-content">
+            <div class="booking-badge">Booking Open</div>
+            <h1 class="hero-title">AU Aspire Silicon City</h1>
+            <h3 class="hero-location">Sector 76, Noida</h3>
+            <ul class="hero-highlights">
+              <li>G+33 Tower | Only 446 Premium Apartments</li>
+              <li>Only 2 or 3 Apartments Per Floor</li>
+              <li>Fully Metro Connected</li>
+              <li>Close to Top Schools, Malls & Hospitals</li>
+            </ul>
+            <h2 class="hero-price">₹ 3.33 Cr* Onwards</h2>
+            <button class="enquire-btn hero-cta-btn">Enquire Now</button>
+          </div>
+          <button class="prev" onclick="prevSlide()">❮</button>
+          <button class="next" onclick="nextSlide()">❯</button>
+        </section>
+        <!-- ABOUT SECTION -->
+        <section
+          id="about-project"
+          class="about-project-section scroll-animate"
+        >
+          <div class="container">
+            <h2>About the Project</h2>
+            <h3>AU Aspire Silicon City</h3>
+            <p class="location"><strong>Location:</strong> Sector 76, Noida</p>
+            <p>
+              Welcome to AU Aspire Silicon City — a pioneering residential
+              enclave that blends cutting-edge architecture, lush greenery, and
+              future-ready urban planning. Situated in the heart of Sector 76,
+              Noida, this luxury address sets a new benchmark for high-rise
+              living with sustainability at its core.
+            </p>
+            <p>
+              Designed with a strong focus on wellness and biophilic principles,
+              each tower is meticulously oriented to maximize natural light,
+              reduce heat gain, and optimize ventilation. Vertical gardens and
+              green terraces create a tranquil environment that nurtures both
+              the body and the mind.
+            </p>
+            <p>
+              With only 446 premium apartments spread across G+33 floors,
+              exclusivity is guaranteed. The master plan ensures minimal tower
+              footprint, allowing over 80% of the site to remain open for
+              landscaping, recreational spaces, and pedestrian walkways.
+            </p>
+            <p>
+              Seamlessly connected to the city via Metro and surrounded by
+              top-tier schools, hospitals, and retail hubs, AU Aspire Silicon
+              City is not just a home — it’s a lifestyle investment in the
+              future of urban living.
+            </p>
+            <h4>Key Highlights</h4>
+            <ul class="highlights-list">
+              <li>
+                Only 2 or 3 apartments per floor ensuring privacy and space
+              </li>
+              <li>Smart home automation-ready units</li>
+              <li>IGBC pre-certified green building design</li>
+              <li>Dedicated EV charging zones and solar lighting</li>
+              <li>
+                Clubhouse with infinity-edge pool, spa, and wellness lounge
+              </li>
+              <li>
+                Children’s learning garden and elder-friendly design pathways
+              </li>
+            </ul>
+          </div>
+        </section>
+        <!-- PRICE SECTION -->
+        <section id="price" class="price-section">
+          <div class="container price-side-by-side">
+            <!-- Left: Table -->
+            <div class="price-table-box scroll-animate">
+              <table class="price-table">
+                <thead>
+                  <tr>
+                    <th>Type</th>
+                    <th>Saleable Area</th>
+                    <th>Price</th>
+                    <th></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>3BHK + Servant</td>
+                    <td>2781 Sq.ft</td>
+                    <td>₹3.33 Cr*</td>
+                    <td>
+                      <button class="price-btn">
+                        Request For Price Breakup
+                      </button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>4BHK + Servant</td>
+                    <td>3342 Sq.ft</td>
+                    <td>On Request</td>
+                    <td>
+                      <button class="price-btn">
+                        Request For Price Breakup
+                      </button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>4BHK Penthouse</td>
+                    <td>5923 Sq.ft</td>
+                    <td>On Request</td>
+                    <td>
+                      <button class="price-btn">
+                        Request For Price Breakup
+                      </button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <!-- SITE PLAN -->
+        <section id="siteplan" class="siteplan-section scroll-animate">
+          <div class="container siteplan-container">
+            <h2>Site Plan & Floor Plan</h2>
+            <div class="siteplan-attachment scroll-animate">
+              <p>📎 <strong>Request Complete Site & Floor Plans</strong></p>
+              <a href="#" class="attachment-btn">Download Plans</a>
+            </div>
+            <div class="siteplan-options">
+              <div class="plan-card scroll-animate">
+                <h3>3BHK + Servant</h3>
+                <button class="request-btn">Request Site Plan</button>
+              </div>
+              <div class="plan-card scroll-animate">
+                <h3>4BHK Servant</h3>
+                <button class="request-btn">Request Site Plan</button>
+              </div>
+              <div class="plan-card scroll-animate">
+                <h3>4BHK Penthouse</h3>
+                <button class="request-btn">Request Site Plan</button>
+              </div>
+              <div class="plan-card scroll-animate">
+                <h3>Duplex Penthouse</h3>
+                <button class="request-btn">Request Site Plan</button>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- AMENITIES -->
+        <section id="amenities" class="amenities-section">
+          <div class="container">
+            <h2 class="scroll-animate">Amenities</h2>
+            <div class="amenities-grid">
+              <div class="amenity-card scroll-animate">
+                <img src="Images/swimming-pool.png" alt="Swimming Pool Icon" />
+                <h3>Swimming Pool</h3>
+              </div>
+              <div class="amenity-card scroll-animate">
+                <img
+                  src="Images/basketball-court.png"
+                  alt="Basketball Court Icon"
+                />
+                <h3>Basketball Court</h3>
+              </div>
+              <div class="amenity-card scroll-animate">
+                <img src="Images/jogging-track.png" alt="Jogging Track Icon" />
+                <h3>Jogging Track</h3>
+              </div>
+              <div class="amenity-card scroll-animate">
+                <img src="Images/billiards.png" alt="Billiards Table Icon" />
+                <h3>Billiards Table</h3>
+              </div>
+              <div class="amenity-card scroll-animate">
+                <img src="Images/gym.png" alt="Gymnasium Icon" />
+                <h3>Gymnasium</h3>
+              </div>
+              <div class="amenity-card scroll-animate">
+                <img src="Images/tennis-court.png" alt="Tennis Court Icon" />
+                <h3>Tennis Court</h3>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- GALLERY -->
+        <section id="gallery" class="gallery-section">
+          <div class="container">
+            <h2 class="scroll-animate">Gallery</h2>
+            <div class="gallery-grid">
+              <img
+                src="Images/gallery1.png"
+                alt="Gallery Image 1"
+                class="scroll-animate"
+              />
+              <img
+                src="Images/gallery2.png"
+                alt="Gallery Image 2"
+                class="scroll-animate"
+              />
+              <img
+                src="Images/gallery3.png"
+                alt="Gallery Image 3"
+                class="scroll-animate"
+              />
+              <img
+                src="Images/gallery4.png"
+                alt="Gallery Image 4"
+                class="scroll-animate"
+              />
+              <img
+                src="Images/gallery1.png"
+                alt="Gallery Image 1"
+                class="scroll-animate"
+              />
+              <img
+                src="Images/gallery2.png"
+                alt="Gallery Image 2"
+                class="scroll-animate"
+              />
+              <img
+                src="Images/gallery3.png"
+                alt="Gallery Image 3"
+                class="scroll-animate"
+              />
+              <img
+                src="Images/gallery4.png"
+                alt="Gallery Image 4"
+                class="scroll-animate"
+              />
+            </div>
+          </div>
+        </section>
+        <!-- LOCATION -->
+        <section id="location" class="location-section scroll-animate">
+          <div class="container">
+            <h2>Location</h2>
+            <p><strong>Project Address:</strong> Sector 76, Noida</p>
+            <div class="map-container scroll-animate">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14008.586203140974!2d77.380927!3d28.598243!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ce53df1a7e4e1%3A0x681bc2dc00b8f2ba!2sSector%2076%2C%20Noida!5e0!3m2!1sen!2sin!4v1680000000000!5m2!1sen!2sin"
+                width="100%"
+                height="400"
+                style="border: 0"
+                allowfullscreen=""
+                loading="lazy"
+              >
+              </iframe>
+            </div>
+          </div>
+        </section>
+        <!-- VIRTUAL TOUR -->
+        <section id="tour" class="tour-section scroll-animate">
+          <div class="container">
+            <h2>Virtual Tour</h2>
+            <div class="video-wrapper scroll-animate">
+              <iframe
+                src="https://kuula.co/share/collection/7FqrV?fs=1&vr=1&zoom=1&autorotate=0.2&thumbs=1&info=1&logo=1"
+                width="100%"
+                height="500"
+                style="border: none; border-radius: 12px"
+                allowfullscreen
+                loading="lazy"
+                title="360 Virtual Tour"
+              ></iframe>
+            </div>
+          </div>
+        </section>
+
+        <!-- Developer + Legal Info Section -->
+        <section class="legal-developer-footer">
+          <div class="container">
+            <div
+              class="about-developer-footer"
+              style="font-size: 0.9rem; line-height: 1.6; margin-bottom: 20px"
+            >
+              <strong>About Developer</strong><br />
+              NBCC (India) Limited is a premier Government of India Civil
+              Engineering Enterprise, established in 1960. Headquartered in New
+              Delhi, the company has earned the distinguished status of a
+              'Navratna' Central Public Sector Enterprise (CPSE). Over the
+              decades, NBCC has established itself as a leader in the
+              construction and infrastructure sector, known for delivering
+              large-scale, high-quality projects across India and abroad. The
+              company’s success is driven by its innovative project management,
+              adherence to global standards, and a dedicated team of
+              professionals. NBCC's portfolio spans real estate development,
+              project management consultancy, and engineering procurement and
+              construction (EPC) services. Notable for completing government
+              housing, redevelopment, and public infrastructure projects, the
+              organization is also actively involved in smart city projects and
+              sustainable development. With a commitment to transparency,
+              quality, and timely delivery, NBCC continues to play a pivotal
+              role in shaping India's urban landscape, reflecting its motto of
+              building a better tomorrow.
+            </div>
+            <div
+              class="rera-disclaimer"
+              style="font-size: 0.9rem; color: #333; margin-bottom: 16px"
+            >
+              <strong
+                >This project is RERA registered. Authorized Channel
+                Partner</strong
+              >
+              | <strong>Channel Partner RERA Number:</strong>
+              <span style="color: #b30000">Coming Soon</span> |
+              <strong>Project RERA Number:</strong>
+              <span style="color: #b30000">Coming Soon</span>
+            </div>
+            <div
+              class="disclaimer-footer"
+              style="font-size: 0.8rem; color: #666"
+            >
+              <strong>Disclaimer:</strong> This website is not an official site
+              and serves solely as an informational portal managed by a RERA
+              authorized real estate agent. It does not constitute an offer or
+              guarantee of any services. Prices and availability are subject to
+              change. The content is for representational purposes only. All
+              rights reserved.
+            </div>
+            <div
+              style="text-align: center; font-size: 0.8rem; margin-top: 12px"
+            >
+              &copy; 2025 : Prop Investment &nbsp;|&nbsp;
+              <a href="#" style="color: #b30000; text-decoration: underline"
+                >Disclaimer</a
+              >
+              |
+              <a href="#" style="color: #b30000; text-decoration: underline"
+                >Privacy Policy</a
+              >
+              |
+              <a href="#" style="color: #b30000; text-decoration: underline"
+                >Terms & Conditions</a
+              >
+            </div>
+          </div>
+        </section>
+
+        <!-- LEAD MODAL (hidden by default) -->
+        <section id="lead-popup-modal">
+          <div id="leadModal" class="modal-overlay" style="display: none">
+            <div class="modal-box">
+              <button class="close-btn" aria-label="Close modal">
+                &times;
+              </button>
+              <div class="modal-left">
+                <h2>We Promise</h2>
+                <ul>
+                  <li>📞 Instant Call Back</li>
+                  <li>🚗 Free Site Visit</li>
+                  <li>💰 Unmatched Price</li>
+                </ul>
+              </div>
+              <div class="modal-right">
+                <h3>
+                  Register Here And Avail
+                  <span class="highlight">The Best Offers!!</span>
+                </h3>
+                <form id="modalLeadForm">
+                  <input type="text" placeholder="Name" required />
+                  <input type="tel" placeholder="Mobile No" required />
+                  <input type="email" placeholder="E-Mail Address" required />
+                  <button type="submit" class="submit-btn">
+                    Pre-Register Now
+                  </button>
+                  <input type="hidden" id="formPurpose" value="modal" />
+                </form>
+                <p class="disclaimer">
+                  I give my consent for the privacy policy to apply…
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- FOOTER -->
+        <footer class="main-footer">
+          <p>&copy; 2025 Welcome Realtors. All rights reserved.</p>
+        </footer>
+      </div>
+      <!-- STICKY CONTACT FORM -->
+      <div class="sticky-contact-form contact-form scroll-animate">
+        <div class="site-visit-cta-strip">
+          <div class="site-visit-flex">
+            <button class="cta-visit-btn" onclick="openModalFromVisit()">
+              <span class="cta-label">🏢 Organize a Site Visit</span>
+            </button>
+          </div>
+        </div>
+
+        <h3><i class="fa-solid fa-message"></i> Contact Us</h3>
+        <form id="stickyContactForm">
+          <div class="form-line">
+            <label>Name</label>
+            <input type="text" name="name" required />
+          </div>
+          <div class="form-line">
+            <label>Email</label>
+            <input type="email" name="email" required />
+          </div>
+          <div class="form-line">
+            <label>Phone</label>
+            <input type="tel" name="phone" required />
+          </div>
+          <button type="submit">
+            <i class="fa-solid fa-paper-plane"></i> Send
+          </button>
+        </form>
+      </div>
+      <!-- WhatsApp Floating Button -->
+      <a
+        href="https://wa.me/919999999999?text=I'm%20interested%20in%20AU%20Aspire%20Silicon%20City"
+        class="sticky-whatsapp"
+        target="_blank"
+      >
+        <i class="fa-brands fa-whatsapp"></i>
+      </a>
+      <!-- Call Floating Button -->
+      <a href="tel:+919999999999" class="sticky-call">
+        <i class="fa-solid fa-phone"></i>
+      </a>
+    </div>
+    <!-- GALLERY LIGHTBOX -->
+    <div class="lightbox-overlay" id="lightbox">
+      <img src="" alt="Zoomed Gallery" />
+    </div>
+    <!-- Firebase & Scripts -->
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-firestore-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-analytics-compat.js"></script>
+    <script>
+      const firebaseConfig = {
+        apiKey: "AIzaSyB0Njftu2UgTEVfDlSbHk2-03MlYn31IKE",
+        authDomain: "au-aspire-leads.firebaseapp.com",
+        projectId: "au-aspire-leads",
+        storageBucket: "au-aspire-leads.firebasestorage.app",
+        messagingSenderId: "911509051033",
+        appId: "1:911509051033:web:2ae289b10ec8b814ca4a08",
+        measurementId: "G-YQC1J9P4Q2",
+      };
+      firebase.initializeApp(firebaseConfig);
+      window.db = firebase.firestore();
+      window.firebase = firebase;
+      window.analytics = firebase.analytics();
+    </script>
+    <script src="script.js"></script>
+    <!-- Intersection Observer for scroll animations -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add("visible");
+                observer.unobserve(entry.target);
+              }
+            });
+          },
+          { threshold: 0.08 }
+        );
+        document
+          .querySelectorAll(".scroll-animate")
+          .forEach((el) => observer.observe(el));
+      });
+    </script>
+  </body>
+</html>
