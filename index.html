@@ -1,9 +1,11 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Welcome Realtors</title>
+
+    <!-- Stylesheets -->
     <link rel="stylesheet" href="style.css" />
     <link
       rel="stylesheet"
@@ -17,21 +19,21 @@
       href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700&display=swap"
       rel="stylesheet"
     />
+
+    <!-- SEO Meta Tags -->
     <meta
       name="description"
       content="AU Aspire Silicon City - Luxury Apartments in Noida. 3BHK & 4BHK premium flats with top amenities. Booking Open!"
     />
-    <meta
-      property="og:title"
-      content="AU Aspire Silicon City - Sector 76, Noida"
-    />
+    <meta property="og:title" content="AU Aspire Silicon City - Sector 76, Noida" />
     <meta
       property="og:description"
       content="Luxury Urban Living with Metro Connectivity. 3 & 4BHK Apartments. Price Starting ₹3.33 Cr."
     />
     <meta property="og:image" content="Images/og-preview.png" />
+
+    <!-- Inline Hero Animations (consider moving to CSS) -->
     <style>
-      /* HERO & ANIMATIONS */
       .bg-slide.active {
         animation: zoomSlow 20s ease-in-out infinite alternate;
       }
@@ -83,6 +85,7 @@
       }
     </style>
   </head>
+
   <body>
     <div class="page-container">
       <div class="main-content">
@@ -123,11 +126,7 @@
                 <a href="#tour"><span>Virtual Tour</span></a>
               </li>
               <li>
-                <a
-                  href="javascript:void(0);"
-                  id="downloadBrochureBtn"
-                  class="nav-brochure-link"
-                >
+                <a href="javascript:void(0);" id="downloadBrochureBtn" class="nav-brochure-link">
                   <span>Brochure</span>
                 </a>
               </li>
@@ -137,14 +136,8 @@
         <!-- HERO SECTION -->
         <section id="hero" class="booking-hero-slider">
           <div class="slide-bg">
-            <img
-              src="https://welcomerealtors.in/assets/img/g-3.webp"
-              class="bg-slide active"
-            />
-            <img
-              src="https://welcomerealtors.in/assets/img/g-14.jpeg"
-              class="bg-slide"
-            />
+            <img src="https://welcomerealtors.in/assets/img/g-3.webp" class="bg-slide active" />
+            <img src="https://welcomerealtors.in/assets/img/g-14.jpeg" class="bg-slide" />
             <img
               src="https://www.myhomeconstructions.com/wp-content/uploads/2024/12/691290436-vipina-web-banner.jpg"
               class="bg-slide"
@@ -168,62 +161,50 @@
           <button class="next" onclick="nextSlide()">❯</button>
         </section>
         <!-- ABOUT SECTION -->
-        <section
-          id="about-project"
-          class="about-project-section scroll-animate"
-        >
+        <section id="about-project" class="about-project-section scroll-animate">
           <div class="container">
             <h2>About the Project</h2>
             <h3>AU Aspire Silicon City</h3>
             <p class="location"><strong>Location:</strong> Sector 76, Noida</p>
             <p>
-              Welcome to AU Aspire Silicon City — a pioneering residential
-              enclave that blends cutting-edge architecture, lush greenery, and
-              future-ready urban planning. Situated in the heart of Sector 76,
-              Noida, this luxury address sets a new benchmark for high-rise
+              Welcome to AU Aspire Silicon City — a pioneering residential enclave that blends
+              cutting-edge architecture, lush greenery, and future-ready urban planning. Situated in
+              the heart of Sector 76, Noida, this luxury address sets a new benchmark for high-rise
               living with sustainability at its core.
             </p>
             <p>
-              Designed with a strong focus on wellness and biophilic principles,
-              each tower is meticulously oriented to maximize natural light,
-              reduce heat gain, and optimize ventilation. Vertical gardens and
-              green terraces create a tranquil environment that nurtures both
-              the body and the mind.
+              Designed with a strong focus on wellness and biophilic principles, each tower is
+              meticulously oriented to maximize natural light, reduce heat gain, and optimize
+              ventilation. Vertical gardens and green terraces create a tranquil environment that
+              nurtures both the body and the mind.
             </p>
             <p>
-              With only 446 premium apartments spread across G+33 floors,
-              exclusivity is guaranteed. The master plan ensures minimal tower
-              footprint, allowing over 80% of the site to remain open for
-              landscaping, recreational spaces, and pedestrian walkways.
+              With only 446 premium apartments spread across G+33 floors, exclusivity is guaranteed.
+              The master plan ensures minimal tower footprint, allowing over 80% of the site to
+              remain open for landscaping, recreational spaces, and pedestrian walkways.
             </p>
             <p>
-              Seamlessly connected to the city via Metro and surrounded by
-              top-tier schools, hospitals, and retail hubs, AU Aspire Silicon
-              City is not just a home — it’s a lifestyle investment in the
-              future of urban living.
+              Seamlessly connected to the city via Metro and surrounded by top-tier schools,
+              hospitals, and retail hubs, AU Aspire Silicon City is not just a home — it’s a
+              lifestyle investment in the future of urban living.
             </p>
             <h4>Key Highlights</h4>
             <ul class="highlights-list">
-              <li>
-                Only 2 or 3 apartments per floor ensuring privacy and space
-              </li>
+              <li>Only 2 or 3 apartments per floor ensuring privacy and space</li>
               <li>Smart home automation-ready units</li>
               <li>IGBC pre-certified green building design</li>
               <li>Dedicated EV charging zones and solar lighting</li>
-              <li>
-                Clubhouse with infinity-edge pool, spa, and wellness lounge
-              </li>
-              <li>
-                Children’s learning garden and elder-friendly design pathways
-              </li>
+              <li>Clubhouse with infinity-edge pool, spa, and wellness lounge</li>
+              <li>Children’s learning garden and elder-friendly design pathways</li>
             </ul>
           </div>
         </section>
         <!-- PRICE SECTION -->
-        <section id="price" class="price-section">
-          <div class="container price-side-by-side">
-            <!-- Left: Table -->
-            <div class="price-table-box scroll-animate">
+        <section id="price" class="price-section scroll-animate">
+          <div class="container">
+            <h2>Pricing</h2>
+
+            <div class="price-table-box">
               <table class="price-table">
                 <thead>
                   <tr>
@@ -235,33 +216,93 @@
                 </thead>
                 <tbody>
                   <tr>
-                    <td>3BHK + Servant</td>
+                    <td>
+                      3BHK +<br />Servant<br />
+                      <span class="status-badge limited">Limited Units</span>
+                    </td>
                     <td>2781 Sq.ft</td>
                     <td>₹3.33 Cr*</td>
                     <td>
-                      <button class="price-btn">
-                        Request For Price Breakup
-                      </button>
+                      <div class="price-actions">
+                        <button class="price-btn">Request Price Breakup</button>
+                        <a
+                          href="https://wa.me/919999999999?text=I'm%20interested%20in%203BHK"
+                          class="whatsapp-price"
+                          target="_blank"
+                        >
+                          <i class="fa-brands fa-whatsapp"></i> Chat
+                        </a>
+                        <a
+                          href="#"
+                          class="download-link"
+                          data-pdf="brochures/3bhk-costsheet.pdf"
+                          data-purpose="costsheet-3bhk"
+                          onclick="triggerCostSheetDownload(this)"
+                          title="Download Cost Sheet"
+                        >
+                          <i class="fa-solid fa-file-arrow-down"></i>
+                        </a>
+                      </div>
                     </td>
                   </tr>
                   <tr>
-                    <td>4BHK + Servant</td>
+                    <td>
+                      4BHK +<br />Servant<br />
+                      <span class="status-badge available">Available</span>
+                    </td>
                     <td>3342 Sq.ft</td>
                     <td>On Request</td>
                     <td>
-                      <button class="price-btn">
-                        Request For Price Breakup
-                      </button>
+                      <div class="price-actions">
+                        <button class="price-btn">Request Price Breakup</button>
+                        <a
+                          href="https://wa.me/919999999999?text=I'm%20interested%20in%204BHK"
+                          class="whatsapp-price"
+                          target="_blank"
+                        >
+                          <i class="fa-brands fa-whatsapp"></i> Chat
+                        </a>
+                        <a
+                          href="#"
+                          class="download-link"
+                          data-pdf="brochures/4bhk-costsheet.pdf"
+                          data-purpose="costsheet-3bhk"
+                          onclick="triggerCostSheetDownload(this)"
+                          title="Download Cost Sheet"
+                        >
+                          <i class="fa-solid fa-file-arrow-down"></i>
+                        </a>
+                      </div>
                     </td>
                   </tr>
                   <tr>
-                    <td>4BHK Penthouse</td>
+                    <td>
+                      4BHK<br />Penthouse<br />
+                      <span class="status-badge soldout">Sold Out</span>
+                    </td>
                     <td>5923 Sq.ft</td>
                     <td>On Request</td>
                     <td>
-                      <button class="price-btn">
-                        Request For Price Breakup
-                      </button>
+                      <div class="price-actions">
+                        <button class="price-btn">Request Price Breakup</button>
+                        <a
+                          href="https://wa.me/919999999999?text=I'm%20interested%20in%20Penthouse"
+                          class="whatsapp-price"
+                          target="_blank"
+                        >
+                          <i class="fa-brands fa-whatsapp"></i> Chat
+                        </a>
+                        <a
+                          href="#"
+                          class="download-link"
+                          data-pdf="brochures/4bhkpenthouse-costsheet.pdf"
+                          data-purpose="costsheet-3bhk"
+                          onclick="triggerCostSheetDownload(this)"
+                          title="Download Cost Sheet"
+                        >
+                          <i class="fa-solid fa-file-arrow-down"></i>
+                        </a>
+                      </div>
                     </td>
                   </tr>
                 </tbody>
@@ -274,107 +315,150 @@
         <section id="siteplan" class="siteplan-section scroll-animate">
           <div class="container siteplan-container">
             <h2>Site Plan & Floor Plan</h2>
-            <div class="siteplan-attachment scroll-animate">
-              <p>📎 <strong>Request Complete Site & Floor Plans</strong></p>
-              <a href="#" class="attachment-btn">Download Plans</a>
-            </div>
-            <div class="siteplan-options">
-              <div class="plan-card scroll-animate">
-                <h3>3BHK + Servant</h3>
-                <button class="request-btn">Request Site Plan</button>
-              </div>
-              <div class="plan-card scroll-animate">
-                <h3>4BHK Servant</h3>
-                <button class="request-btn">Request Site Plan</button>
-              </div>
-              <div class="plan-card scroll-animate">
-                <h3>4BHK Penthouse</h3>
-                <button class="request-btn">Request Site Plan</button>
-              </div>
-              <div class="plan-card scroll-animate">
-                <h3>Duplex Penthouse</h3>
-                <button class="request-btn">Request Site Plan</button>
+
+            <div class="plan-card-grid-wrapper">
+              <h3 class="plan-section-heading">Premium Residences</h3>
+              <div class="plan-card-grid">
+                <div class="plan-card">
+                  <img
+                    src="https://myhomenishada.co.in/assests/img/floor-plan/tower-0106-typical-floor-plan.webp"
+                    alt="3BHK + Servant Plan"
+                  />
+                  <h3>3BHK + Servant</h3>
+                  <p class="plan-size">2781 Sq.ft</p>
+                  <button class="request-btn">View Plan</button>
+                </div>
+                <div class="plan-card">
+                  <img
+                    src="https://myhomenishada.co.in/assests/img/floor-plan/tower-0106-typical-floor-plan.webp"
+                    alt="4BHK Plan"
+                  />
+                  <h3>4BHK + Servant</h3>
+                  <p class="plan-size">3342 Sq.ft</p>
+                  <button class="request-btn">View Plan</button>
+                </div>
+                <div class="plan-card">
+                  <img
+                    src="https://prelaunchoffers.com/wp-content/uploads/2023/11/4BHK-Penthouse-Lower-Floor-Plan.jpg"
+                    alt="Penthouse Plan"
+                  />
+                  <h3>4BHK Penthouse</h3>
+                  <p class="plan-size">5923 Sq.ft</p>
+                  <button class="request-btn">View Plan</button>
+                </div>
+                <div class="plan-card">
+                  <img
+                    src="https://i.pinimg.com/736x/e2/5a/39/e25a39800951e8c9dd8d92ba6ebbba3b.jpg"
+                    alt="Duplex Penthouse Plan"
+                  />
+                  <h3>Duplex Penthouse</h3>
+                  <p class="plan-size">6720 Sq.ft</p>
+                  <button class="request-btn">View Plan</button>
+                </div>
               </div>
             </div>
           </div>
         </section>
+
         <!-- AMENITIES -->
         <section id="amenities" class="amenities-section">
           <div class="container">
             <h2 class="scroll-animate">Amenities</h2>
             <div class="amenities-grid">
-              <div class="amenity-card scroll-animate">
-                <img src="Images/swimming-pool.png" alt="Swimming Pool Icon" />
-                <h3>Swimming Pool</h3>
+              <div
+                class="amenity-card scroll-animate"
+                style="
+                  background-image: url(&quot;https://i.pinimg.com/474x/59/97/80/5997803013270a3e907a4e47084aeeab.jpg&quot;);
+                "
+              >
+                <div class="amenity-overlay"><h3>Swimming Pool</h3></div>
               </div>
-              <div class="amenity-card scroll-animate">
-                <img
-                  src="Images/basketball-court.png"
-                  alt="Basketball Court Icon"
-                />
-                <h3>Basketball Court</h3>
+              <div
+                class="amenity-card scroll-animate"
+                style="
+                  background-image: url(&quot;https://media.cnn.com/api/v1/images/stellar/prod/230627123953-02-brooklyn-supertall-sky-park-basketball-court.jpg&quot;);
+                "
+              >
+                <div class="amenity-overlay"><h3>Basketball Court</h3></div>
               </div>
-              <div class="amenity-card scroll-animate">
-                <img src="Images/jogging-track.png" alt="Jogging Track Icon" />
-                <h3>Jogging Track</h3>
+              <div
+                class="amenity-card scroll-animate"
+                style="
+                  background-image: url(&quot;https://www.officerentinfo.ro/media/cache/09/default_full/uploads/media/default/0001/34/5d0cc81d5c8de12ba2e11222850c55f812818df6.jpeg&quot;);
+                "
+              >
+                <div class="amenity-overlay"><h3>Jogging Track</h3></div>
               </div>
-              <div class="amenity-card scroll-animate">
-                <img src="Images/billiards.png" alt="Billiards Table Icon" />
-                <h3>Billiards Table</h3>
+              <div
+                class="amenity-card scroll-animate"
+                style="
+                  background-image: url(&quot;https://i.pinimg.com/736x/16/34/8b/16348bf0d994b4c51bdac3e6cdece4d5.jpg&quot;);
+                "
+              >
+                <div class="amenity-overlay"><h3>Billiards Table</h3></div>
               </div>
-              <div class="amenity-card scroll-animate">
-                <img src="Images/gym.png" alt="Gymnasium Icon" />
-                <h3>Gymnasium</h3>
+              <div
+                class="amenity-card scroll-animate"
+                style="
+                  background-image: url(&quot;https://www.17degreesnorth.com/images/gym-premium-membership-clubs.webp&quot;);
+                "
+              >
+                <div class="amenity-overlay"><h3>Gymnasium</h3></div>
               </div>
-              <div class="amenity-card scroll-animate">
-                <img src="Images/tennis-court.png" alt="Tennis Court Icon" />
-                <h3>Tennis Court</h3>
+              <div
+                class="amenity-card scroll-animate"
+                style="
+                  background-image: url(&quot;https://content.jdmagicbox.com/v2/comp/hyderabad/i8/040pxx40.xx40.200925153905.r1i8/catalogue/fncc-tennis-court-film-nagar-hyderabad-lawn-tennis-courts-CL8vveOKrZ.jpg&quot;);
+                "
+              >
+                <div class="amenity-overlay"><h3>Tennis Court</h3></div>
               </div>
             </div>
           </div>
         </section>
+
         <!-- GALLERY -->
         <section id="gallery" class="gallery-section">
           <div class="container">
             <h2 class="scroll-animate">Gallery</h2>
             <div class="gallery-grid">
               <img
-                src="Images/gallery1.png"
+                src="https://welcomerealtors.in/assets/img/g-5.webp"
                 alt="Gallery Image 1"
                 class="scroll-animate"
               />
               <img
-                src="Images/gallery2.png"
+                src="https://welcomerealtors.in/assets/img/g-13.jpeg"
                 alt="Gallery Image 2"
                 class="scroll-animate"
               />
               <img
-                src="Images/gallery3.png"
+                src="https://welcomerealtors.in/assets/img/g-12.jpeg"
                 alt="Gallery Image 3"
                 class="scroll-animate"
               />
               <img
-                src="Images/gallery4.png"
+                src="https://welcomerealtors.in/assets/img/g-11.jpeg"
                 alt="Gallery Image 4"
                 class="scroll-animate"
               />
               <img
-                src="Images/gallery1.png"
+                src="https://welcomerealtors.in/assets/img/g-10.jpeg"
                 alt="Gallery Image 1"
                 class="scroll-animate"
               />
               <img
-                src="Images/gallery2.png"
+                src="https://welcomerealtors.in/assets/img/g-9.jpeg"
                 alt="Gallery Image 2"
                 class="scroll-animate"
               />
               <img
-                src="Images/gallery3.png"
+                src="https://welcomerealtors.in/assets/img/g-8.jpeg"
                 alt="Gallery Image 3"
                 class="scroll-animate"
               />
               <img
-                src="Images/gallery4.png"
+                src="https://welcomerealtors.in/assets/img/g-14.jpeg"
                 alt="Gallery Image 4"
                 class="scroll-animate"
               />
@@ -425,64 +509,44 @@
               style="font-size: 0.9rem; line-height: 1.6; margin-bottom: 20px"
             >
               <strong>About Developer</strong><br />
-              NBCC (India) Limited is a premier Government of India Civil
-              Engineering Enterprise, established in 1960. Headquartered in New
-              Delhi, the company has earned the distinguished status of a
-              'Navratna' Central Public Sector Enterprise (CPSE). Over the
-              decades, NBCC has established itself as a leader in the
-              construction and infrastructure sector, known for delivering
-              large-scale, high-quality projects across India and abroad. The
-              company’s success is driven by its innovative project management,
-              adherence to global standards, and a dedicated team of
-              professionals. NBCC's portfolio spans real estate development,
-              project management consultancy, and engineering procurement and
-              construction (EPC) services. Notable for completing government
-              housing, redevelopment, and public infrastructure projects, the
-              organization is also actively involved in smart city projects and
-              sustainable development. With a commitment to transparency,
-              quality, and timely delivery, NBCC continues to play a pivotal
-              role in shaping India's urban landscape, reflecting its motto of
-              building a better tomorrow.
+              NBCC (India) Limited is a premier Government of India Civil Engineering Enterprise,
+              established in 1960. Headquartered in New Delhi, the company has earned the
+              distinguished status of a 'Navratna' Central Public Sector Enterprise (CPSE). Over the
+              decades, NBCC has established itself as a leader in the construction and
+              infrastructure sector, known for delivering large-scale, high-quality projects across
+              India and abroad. The company’s success is driven by its innovative project
+              management, adherence to global standards, and a dedicated team of professionals.
+              NBCC's portfolio spans real estate development, project management consultancy, and
+              engineering procurement and construction (EPC) services. Notable for completing
+              government housing, redevelopment, and public infrastructure projects, the
+              organization is also actively involved in smart city projects and sustainable
+              development. With a commitment to transparency, quality, and timely delivery, NBCC
+              continues to play a pivotal role in shaping India's urban landscape, reflecting its
+              motto of building a better tomorrow.
             </div>
             <div
               class="rera-disclaimer"
               style="font-size: 0.9rem; color: #333; margin-bottom: 16px"
             >
-              <strong
-                >This project is RERA registered. Authorized Channel
-                Partner</strong
-              >
+              <strong>This project is RERA registered. Authorized Channel Partner</strong>
               | <strong>Channel Partner RERA Number:</strong>
               <span style="color: #b30000">Coming Soon</span> |
               <strong>Project RERA Number:</strong>
               <span style="color: #b30000">Coming Soon</span>
             </div>
-            <div
-              class="disclaimer-footer"
-              style="font-size: 0.8rem; color: #666"
-            >
-              <strong>Disclaimer:</strong> This website is not an official site
-              and serves solely as an informational portal managed by a RERA
-              authorized real estate agent. It does not constitute an offer or
-              guarantee of any services. Prices and availability are subject to
-              change. The content is for representational purposes only. All
-              rights reserved.
+            <div class="disclaimer-footer" style="font-size: 0.8rem; color: #666">
+              <strong>Disclaimer:</strong> This website is not an official site and serves solely as
+              an informational portal managed by a RERA authorized real estate agent. It does not
+              constitute an offer or guarantee of any services. Prices and availability are subject
+              to change. The content is for representational purposes only. All rights reserved.
             </div>
-            <div
-              style="text-align: center; font-size: 0.8rem; margin-top: 12px"
-            >
+            <div style="text-align: center; font-size: 0.8rem; margin-top: 12px">
               &copy; 2025 : Prop Investment &nbsp;|&nbsp;
-              <a href="#" style="color: #b30000; text-decoration: underline"
-                >Disclaimer</a
-              >
+              <a href="#" style="color: #b30000; text-decoration: underline">Disclaimer</a>
               |
-              <a href="#" style="color: #b30000; text-decoration: underline"
-                >Privacy Policy</a
-              >
+              <a href="#" style="color: #b30000; text-decoration: underline">Privacy Policy</a>
               |
-              <a href="#" style="color: #b30000; text-decoration: underline"
-                >Terms & Conditions</a
-              >
+              <a href="#" style="color: #b30000; text-decoration: underline">Terms & Conditions</a>
             </div>
           </div>
         </section>
@@ -491,9 +555,7 @@
         <section id="lead-popup-modal">
           <div id="leadModal" class="modal-overlay" style="display: none">
             <div class="modal-box">
-              <button class="close-btn" aria-label="Close modal">
-                &times;
-              </button>
+              <button class="close-btn" aria-label="Close modal">&times;</button>
               <div class="modal-left">
                 <h2>We Promise</h2>
                 <ul>
@@ -511,14 +573,10 @@
                   <input type="text" placeholder="Name" required />
                   <input type="tel" placeholder="Mobile No" required />
                   <input type="email" placeholder="E-Mail Address" required />
-                  <button type="submit" class="submit-btn">
-                    Pre-Register Now
-                  </button>
+                  <button type="submit" class="submit-btn">Pre-Register Now</button>
                   <input type="hidden" id="formPurpose" value="modal" />
                 </form>
-                <p class="disclaimer">
-                  I give my consent for the privacy policy to apply…
-                </p>
+                <p class="disclaimer">I give my consent for the privacy policy to apply…</p>
               </div>
             </div>
           </div>
@@ -552,9 +610,7 @@
             <label>Phone</label>
             <input type="tel" name="phone" required />
           </div>
-          <button type="submit">
-            <i class="fa-solid fa-paper-plane"></i> Send
-          </button>
+          <button type="submit"><i class="fa-solid fa-paper-plane"></i> Send</button>
         </form>
       </div>
       <!-- WhatsApp Floating Button -->
@@ -595,26 +651,7 @@
       window.analytics = firebase.analytics();
     </script>
     <script src="script.js"></script>
-    <!-- Intersection Observer for scroll animations -->
-    <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        const observer = new IntersectionObserver(
-          (entries) => {
-            entries.forEach((entry) => {
-              if (entry.isIntersecting) {
-                entry.target.classList.add("visible");
-                observer.unobserve(entry.target);
-              }
-            });
-          },
-          { threshold: 0.08 }
-        );
-        document
-          .querySelectorAll(".scroll-animate")
-          .forEach((el) => observer.observe(el));
-      });
-    </script>
-
+    <!-- Mobile CTA Button -->
     <button class="mobile-contact-btn" onclick="openModalFromVisit()">
       <i class="fa-solid fa-message"></i> Contact Us
     </button>

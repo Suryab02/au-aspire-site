@@ -35,7 +35,7 @@ body {
 }
 
 section {
-  scroll-margin-top: 100px;
+  scroll-margin-top: 50px;
 }
 
 @media (max-width: 768px) {
@@ -118,7 +118,9 @@ section {
   background: transparent;
   padding: 8px 18px;
   border-radius: 30px;
-  transition: color 0.18s, background 0.15s;
+  transition:
+    color 0.18s,
+    background 0.15s;
   font-family: inherit;
   font-weight: 600;
 }
@@ -149,7 +151,9 @@ section {
   font-weight: 700;
   letter-spacing: 0.02em;
   box-shadow: 0 2px 16px rgba(179, 0, 0, 0.11);
-  transition: background 0.17s, color 0.12s;
+  transition:
+    background 0.17s,
+    color 0.12s;
   display: flex;
   align-items: center;
   gap: 9px;
@@ -212,7 +216,9 @@ section {
 /* --- Navbar Scroll Behavior --- */
 .navbar.transparent {
   background: transparent;
-  transition: background 0.3s ease, box-shadow 0.3s ease;
+  transition:
+    background 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
 .navbar.scrolled {
@@ -335,11 +341,7 @@ section {
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(
-    to bottom,
-    rgba(0, 0, 0, 0.5),
-    rgba(0, 0, 0, 0.85)
-  );
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.85));
   z-index: 2;
 }
 
@@ -595,6 +597,7 @@ section {
   padding: 80px 20px;
   color: #222;
   font-family: "Poppins", sans-serif;
+  text-align: center;
 }
 
 .price-container {
@@ -620,7 +623,7 @@ section {
 .price-section h2 {
   font-size: 2.4rem;
   font-weight: 800;
-  margin-bottom: 20px;
+  margin-bottom: 40px;
   color: #b30000;
 }
 
@@ -632,10 +635,16 @@ section {
 
 .price-table {
   width: 100%;
-  max-width: 700px; /* match container */
+  min-width: 700px;
+  border-collapse: collapse;
   margin: 0 auto;
   border-radius: 12px;
   overflow: hidden;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05);
+}
+.price-table-box {
+  overflow-x: auto;
+  max-width: 100%;
 }
 
 .price-table th,
@@ -742,7 +751,9 @@ section {
   max-width: 550px;
   margin-left: auto;
   margin-right: auto;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
   cursor: pointer;
 }
 
@@ -776,6 +787,111 @@ section {
 .attachment-card-btn:hover {
   background-color: #800000;
 }
+.price-table th,
+.price-table td {
+  padding: 16px 20px;
+  text-align: left;
+  font-size: 1rem;
+  border-bottom: 1px solid #ddd;
+}
+
+.price-table th {
+  background-color: #b30000;
+  color: #fff;
+  font-weight: 600;
+}
+
+.price-btn {
+  background-color: #b30000;
+  color: white;
+  padding: 10px 22px;
+  border: none;
+  border-radius: 25px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 6px 14px rgba(179, 0, 0, 0.5);
+  transition: background-color 0.3s ease;
+}
+
+.price-btn:hover {
+  background-color: #800000;
+}
+
+@media (max-width: 768px) {
+  .price-table {
+    min-width: 600px;
+  }
+}
+/* Status Badges */
+.status-badge {
+  display: inline-block;
+  padding: 4px 10px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  border-radius: 20px;
+  margin-top: 4px;
+}
+
+.status-badge.limited {
+  background-color: #fff3cd;
+  color: #856404;
+}
+
+.status-badge.available {
+  background-color: #d4edda;
+  color: #155724;
+}
+
+.status-badge.soldout {
+  background-color: #f8d7da;
+  color: #721c24;
+}
+
+/* Button Layout in Cell */
+.price-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.whatsapp-price {
+  background-color: #25d366;
+  color: white;
+  padding: 8px 16px;
+  border-radius: 25px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: background-color 0.3s ease;
+}
+
+.whatsapp-price:hover {
+  background-color: #1da851;
+}
+
+.price-btn:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+/* Download PDF icon */
+.download-link {
+  color: #444;
+  font-size: 1.25rem;
+  padding: 6px;
+  border-radius: 6px;
+  transition: color 0.3s ease;
+}
+
+.download-link:hover {
+  color: #b30000;
+}
 
 /* Site Plan */
 .siteplan-section {
@@ -787,7 +903,7 @@ section {
 }
 
 .siteplan-container {
-  max-width: 900px;
+  max-width: 1200px;
   margin: auto;
 }
 
@@ -798,37 +914,77 @@ section {
   color: #b30000;
 }
 
-.siteplan-attachment {
-  margin-bottom: 50px;
-  padding: 20px;
-  background: #fff;
-  border-radius: 12px;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+.plan-card-grid-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
 }
 
-.siteplan-options {
-  display: flex;
-  gap: 30px;
-  flex-wrap: wrap;
-  justify-content: center;
+.plan-section-heading {
+  text-align: left;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #b30000;
+  padding-left: 10px;
+}
+
+.plan-card-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+@media (max-width: 1024px) {
+  .plan-card-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .plan-card-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 .plan-card {
   background: #fff;
-  padding: 30px 25px;
+  padding: 20px;
   border-radius: 12px;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
-  width: 200px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
   display: flex;
   flex-direction: column;
   align-items: center;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.plan-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.15);
+}
+
+.plan-card img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 16px;
+  border: 1px solid #eee;
 }
 
 .plan-card h3 {
-  margin-bottom: 25px;
+  font-size: 1.1rem;
   font-weight: 700;
-  color: #222;
-  font-size: 1.2rem;
+  color: #b30000;
+  margin-bottom: 6px;
+  text-align: center;
+}
+
+.plan-size {
+  font-size: 0.9rem;
+  color: #666;
+  margin-bottom: 12px;
 }
 
 .request-btn {
@@ -839,9 +995,9 @@ section {
   border-radius: 25px;
   font-weight: 600;
   cursor: pointer;
+  width: 100%;
   box-shadow: 0 6px 14px rgba(179, 0, 0, 0.5);
   transition: background-color 0.3s ease;
-  width: 100%;
 }
 
 .request-btn:hover {
@@ -850,60 +1006,78 @@ section {
 
 /* Property Cards (Amenities) */
 .amenities-section {
-  background-color: #f8f9fa;
-  padding: 80px 20px;
-  font-family: "Poppins", sans-serif;
-  color: #222;
-  max-width: 1200px;
-  margin: auto;
+  background: #f8f9fa;
+  padding: 100px 20px;
   text-align: center;
 }
 
 .amenities-section h2 {
-  font-size: 2.4rem;
-  font-weight: 800;
-  margin-bottom: 40px;
+  font-size: 2.5rem;
+  margin-bottom: 50px;
   color: #b30000;
+  font-weight: 700;
 }
 
 .amenities-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: 30px;
-  justify-items: center;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 24px;
 }
 
 .amenity-card {
-  background: white;
-  padding: 30px 20px;
-  border-radius: 12px;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  cursor: default;
-  max-width: 200px;
+  position: relative;
+  width: 100%;
+  padding-top: 66%; /* 3:2 aspect ratio */
+  border-radius: 16px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+  cursor: pointer;
 }
 
 .amenity-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 10px 25px rgba(179, 0, 0, 0.4);
+  transform: translateY(-6px);
+  box-shadow: 0 12px 30px rgba(179, 0, 0, 0.3);
 }
 
-.amenity-card img {
-  width: 60px;
-  height: 60px;
-  margin-bottom: 18px;
-  filter: drop-shadow(0 0 0.75px rgba(179, 0, 0, 0.5));
+.amenity-overlay {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 16px;
+  text-align: center;
+  opacity: 0;
+  transform: translateY(10px);
+  transition:
+    opacity 0.3s ease,
+    transform 0.3s ease;
+  backdrop-filter: blur(6px);
+  background: rgba(0, 0, 0, 0.4);
+  border-bottom-left-radius: 16px;
+  border-bottom-right-radius: 16px;
 }
 
-.amenity-card h3 {
+.amenity-overlay h3 {
+  margin: 0;
+  color: #fff;
   font-size: 1.1rem;
-  font-weight: 700;
-  color: #b30000;
+  font-weight: 600;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.6);
+}
+
+.amenity-card:hover .amenity-overlay {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 /* ===== GALLERY SECTION ===== */
 .gallery-section {
-  padding: 80px 20px;
+  padding: 40px 20px;
   background-color: #f8f9fa;
   font-family: "Poppins", sans-serif;
 }
@@ -1290,7 +1464,9 @@ section {
   flex-direction: column;
   z-index: 999;
   font-family: "Poppins", sans-serif;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
 .sticky-contact-form h3 {
@@ -1332,7 +1508,9 @@ section {
   border: 1px solid #ccc;
   font-size: 0.95rem;
   background: #fafafa;
-  transition: border-color 0.3s ease, background-color 0.3s ease;
+  transition:
+    border-color 0.3s ease,
+    background-color 0.3s ease;
   font-family: inherit;
 }
 
@@ -1353,7 +1531,9 @@ section {
   font-weight: bold;
   font-size: 1rem;
   cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.2s ease;
+  transition:
+    background-color 0.3s ease,
+    transform 0.2s ease;
 }
 
 .sticky-contact-form button:hover {
@@ -1435,14 +1615,18 @@ section {
   cursor: pointer;
   box-shadow: 0 8px 24px rgba(179, 0, 0, 0.8);
   animation: pulse 2s infinite;
-  transition: box-shadow 0.3s, background 0.3s;
+  transition:
+    box-shadow 0.3s,
+    background 0.3s;
   position: relative;
   z-index: 1;
 }
 .hero-cta-btn:hover,
 .enquire-btn:hover {
   background: #800000;
-  box-shadow: 0 0 16px 3px #ff4747, 0 8px 24px rgba(179, 0, 0, 0.8);
+  box-shadow:
+    0 0 16px 3px #ff4747,
+    0 8px 24px rgba(179, 0, 0, 0.8);
 }
 
 .nav-links li a.active,
@@ -1538,7 +1722,9 @@ section {
   background: transparent;
   padding: 8px 18px;
   border-radius: 30px;
-  transition: color 0.18s, background 0.15s;
+  transition:
+    color 0.18s,
+    background 0.15s;
   font-family: inherit;
   font-weight: 600;
 }
@@ -1570,7 +1756,9 @@ section {
   font-weight: 700;
   letter-spacing: 0.02em;
   box-shadow: 0 2px 16px rgba(179, 0, 0, 0.11);
-  transition: background 0.17s, color 0.12s;
+  transition:
+    background 0.17s,
+    color 0.12s;
   display: flex;
   align-items: center;
   gap: 9px;
@@ -1641,7 +1829,9 @@ section {
 /* --- Navbar Scroll Behavior --- */
 .navbar.transparent {
   background: transparent;
-  transition: background 0.3s ease, box-shadow 0.3s ease;
+  transition:
+    background 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
 .navbar.scrolled {
@@ -1765,11 +1955,7 @@ section {
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(
-    to bottom,
-    rgba(0, 0, 0, 0.5),
-    rgba(0, 0, 0, 0.85)
-  );
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.85));
   z-index: 2;
 }
 
@@ -2028,6 +2214,7 @@ section {
 
 /* Price */
 .price-section {
+  padding: 60px 20px;
   background-color: #f8f9fa;
   padding: 80px 20px;
   color: #222;
@@ -2181,7 +2368,9 @@ section {
   max-width: 550px;
   margin-left: auto;
   margin-right: auto;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
   cursor: pointer;
 }
 
@@ -2219,7 +2408,7 @@ section {
 /* Site Plan */
 .siteplan-section {
   background-color: #f8f9fa;
-  padding: 80px 20px;
+  padding: 60px 20px;
   color: #222;
   font-family: "Poppins", sans-serif;
   text-align: center;
@@ -2273,14 +2462,13 @@ section {
 .request-btn {
   background-color: #b30000;
   color: white;
-  padding: 12px 28px;
+  padding: 10px 20px;
   border: none;
   border-radius: 25px;
   font-weight: 600;
   cursor: pointer;
-  box-shadow: 0 6px 14px rgba(179, 0, 0, 0.5);
-  transition: background-color 0.3s ease;
   width: 100%;
+  transition: background-color 0.3s ease;
 }
 
 .request-btn:hover {
@@ -2290,7 +2478,7 @@ section {
 /* Property Cards (Amenities) */
 .amenities-section {
   background-color: #f8f9fa;
-  padding: 80px 20px;
+  padding: 60px 20px;
   font-family: "Poppins", sans-serif;
   color: #222;
   max-width: 1200px;
@@ -2307,19 +2495,24 @@ section {
 
 .amenities-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: 30px;
-  justify-items: center;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 24px;
 }
 
 .amenity-card {
-  background: white;
-  padding: 30px 20px;
-  border-radius: 12px;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  cursor: default;
-  max-width: 200px;
+  position: relative;
+  width: 100%;
+  padding-top: 66%; /* 3:2 aspect ratio */
+  border-radius: 16px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+  cursor: pointer;
 }
 
 .amenity-card:hover {
@@ -2342,7 +2535,7 @@ section {
 
 /* ===== GALLERY SECTION ===== */
 .gallery-section {
-  padding: 80px 20px;
+  padding: 60px 20px;
   background-color: #f8f9fa;
   font-family: "Poppins", sans-serif;
 }
@@ -2749,7 +2942,9 @@ section {
   flex-direction: column;
   z-index: 999;
   font-family: "Poppins", sans-serif;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
 .sticky-contact-form h3 {
@@ -2791,7 +2986,9 @@ section {
   border: 1px solid #ccc;
   font-size: 0.95rem;
   background: #fafafa;
-  transition: border-color 0.3s ease, background-color 0.3s ease;
+  transition:
+    border-color 0.3s ease,
+    background-color 0.3s ease;
   font-family: inherit;
 }
 
@@ -2812,7 +3009,9 @@ section {
   font-weight: bold;
   font-size: 1rem;
   cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.2s ease;
+  transition:
+    background-color 0.3s ease,
+    transform 0.2s ease;
 }
 
 .sticky-contact-form button:hover {
@@ -2904,7 +3103,9 @@ section {
   cursor: pointer;
   box-shadow: 0 8px 24px rgba(179, 0, 0, 0.8);
   animation: pulse 2s infinite;
-  transition: box-shadow 0.3s, background 0.3s;
+  transition:
+    box-shadow 0.3s,
+    background 0.3s;
   position: relative;
   z-index: 1;
 }
@@ -2912,7 +3113,9 @@ section {
 .hero-cta-btn:hover,
 .enquire-btn:hover {
   background: #800000;
-  box-shadow: 0 0 16px 3px #ff4747, 0 8px 24px rgba(179, 0, 0, 0.8);
+  box-shadow:
+    0 0 16px 3px #ff4747,
+    0 8px 24px rgba(179, 0, 0, 0.8);
 }
 
 .nav-links li a.active,

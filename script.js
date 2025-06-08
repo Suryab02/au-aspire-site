@@ -38,17 +38,13 @@ document.addEventListener("DOMContentLoaded", function () {
   // ----- NAVBAR TOGGLE -----
   const toggle = document.getElementById("menu-toggle");
   const navLinksContainer = document.getElementById("nav-links");
-  toggle.addEventListener("click", () =>
-    navLinksContainer.classList.toggle("show")
-  );
-  toggle.addEventListener("keydown", (e) => {
+  toggle.addEventListener("click", () => navLinksContainer.classList.toggle("show"));
+  toggle.addEventListener("keydown", e => {
     if (e.key === "Enter" || e.key === " ") toggle.click();
   });
 
   // ----- LAZY LOAD IMAGES -----
-  document
-    .querySelectorAll("img")
-    .forEach((img) => img.setAttribute("loading", "lazy"));
+  document.querySelectorAll("img").forEach(img => img.setAttribute("loading", "lazy"));
 
   // ----- MODAL LOGIC -----
   function closeModal() {
@@ -66,7 +62,7 @@ document.addEventListener("DOMContentLoaded", function () {
       firebase.analytics().logEvent("modal_opened", { source: "lead_popup" });
     }
   }
-  document.addEventListener("keydown", (e) => {
+  document.addEventListener("keydown", e => {
     if (e.key === "Escape") closeModal();
   });
   document.getElementById("leadModal").addEventListener("click", function (e) {
@@ -80,7 +76,7 @@ document.addEventListener("DOMContentLoaded", function () {
     openModal();
   });
 
-  document.querySelectorAll(".price-btn").forEach((btn) => {
+  document.querySelectorAll(".price-btn").forEach(btn => {
     btn.addEventListener("click", () => {
       document.getElementById("formPurpose")?.setAttribute("value", "enquiry");
       openModal();
@@ -118,15 +114,9 @@ document.addEventListener("DOMContentLoaded", function () {
   const modalForm = document.getElementById("modalLeadForm");
   modalForm.addEventListener("submit", function (e) {
     e.preventDefault();
-    const name = modalForm
-      .querySelector('input[placeholder="Name"]')
-      ?.value.trim();
-    const phone = modalForm
-      .querySelector('input[placeholder="Mobile No"]')
-      ?.value.trim();
-    const email = modalForm
-      .querySelector('input[placeholder="E-Mail Address"]')
-      ?.value.trim();
+    const name = modalForm.querySelector('input[placeholder="Name"]')?.value.trim();
+    const phone = modalForm.querySelector('input[placeholder="Mobile No"]')?.value.trim();
+    const email = modalForm.querySelector('input[placeholder="E-Mail Address"]')?.value.trim();
     const purpose = document.getElementById("formPurpose")?.value || "modal";
     if (!name || !phone || !email) {
       showToast("Please fill out all fields.");
@@ -155,12 +145,19 @@ document.addEventListener("DOMContentLoaded", function () {
           window.open("brochures/brochure.pdf", "_blank");
         } else {
           window.location.href = "#hero";
+
+          if (purpose.startsWith("costsheet-")) {
+            if (window._downloadAfterLead) {
+              window.open(window._downloadAfterLead, "_blank");
+              window._downloadAfterLead = null;
+            }
+          }
         }
         if (purpose === "cost-sheet") {
           window.open("brochures/cost-sheet.pdf", "_blank");
         }
       })
-      .catch((error) => {
+      .catch(error => {
         console.error("Error submitting form:", error);
         showToast("Something went wrong. Please try again later.");
       });
@@ -226,7 +223,7 @@ document.addEventListener("DOMContentLoaded", function () {
             });
           }
         })
-        .catch((err) => {
+        .catch(err => {
           console.error("Sticky Form Error:", err);
           showToast("Something went wrong. Please try again later.");
         });
@@ -236,7 +233,7 @@ document.addEventListener("DOMContentLoaded", function () {
   // ----- GALLERY LIGHTBOX -----
   const lightbox = document.getElementById("lightbox");
   const lightboxImg = lightbox.querySelector("img");
-  document.querySelectorAll(".gallery-grid img").forEach((img) => {
+  document.querySelectorAll(".gallery-grid img").forEach(img => {
     img.addEventListener("click", () => {
       lightbox.classList.add("active");
       lightboxImg.src = img.src;
@@ -259,7 +256,7 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   // ----- WHATSAPP CTA -----
-  document.querySelectorAll(".whatsapp-cta-btn").forEach((btn) => {
+  document.querySelectorAll(".whatsapp-cta-btn").forEach(btn => {
     btn.addEventListener("click", () => {
       if (window.analytics) {
         analytics.logEvent("whatsapp_lead_clicked", {
@@ -270,26 +267,24 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   // ----- BROCHURE, COST SHEET, SITE PLAN (ALL buttons) -----
-  document.querySelectorAll(".attachment-btn").forEach((btn) => {
+  document.querySelectorAll(".attachment-btn").forEach(btn => {
     btn.addEventListener("click", () => {
       document.getElementById("formPurpose")?.setAttribute("value", "download");
       openModal();
     });
   });
 
-  document.querySelectorAll(".request-btn").forEach((btn) => {
+  document.querySelectorAll(".request-btn").forEach(btn => {
     btn.addEventListener("click", () => {
-      document
-        .getElementById("formPurpose")
-        ?.setAttribute("value", "site-plan");
+      document.getElementById("formPurpose")?.setAttribute("value", "site-plan");
       openModal();
     });
   });
 
   // ----- SCROLL-TRIGGERED ANIMATIONS -----
   const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
+    entries => {
+      entries.forEach(entry => {
         if (entry.isIntersecting) {
           entry.target.classList.add("visible");
           observer.unobserve(entry.target);
@@ -298,9 +293,7 @@ document.addEventListener("DOMContentLoaded", function () {
     },
     { threshold: 0.1 }
   );
-  document
-    .querySelectorAll(".scroll-animate")
-    .forEach((el) => observer.observe(el));
+  document.querySelectorAll(".scroll-animate").forEach(el => observer.observe(el));
 });
 
 const sections = document.querySelectorAll("section[id]");
@@ -316,21 +309,15 @@ function debounce(fn, delay) {
 
 function handleScrollSpy() {
   let currentSectionId = "";
-  sections.forEach((section) => {
+  sections.forEach(section => {
     const sectionTop = section.offsetTop - 110;
     const sectionHeight = section.offsetHeight;
-    if (
-      window.pageYOffset >= sectionTop &&
-      window.pageYOffset < sectionTop + sectionHeight
-    ) {
+    if (window.pageYOffset >= sectionTop && window.pageYOffset < sectionTop + sectionHeight) {
       currentSectionId = section.getAttribute("id");
     }
   });
-  navLinks.forEach((link) => {
-    link.classList.toggle(
-      "active",
-      link.getAttribute("href") === `#${currentSectionId}`
-    );
+  navLinks.forEach(link => {
+    link.classList.toggle("active", link.getAttribute("href") === `#${currentSectionId}`);
   });
 }
 function openModalFromVisit() {
@@ -338,8 +325,17 @@ function openModalFromVisit() {
   openModal();
 }
 
-function triggerCostSheetDownload() {
-  document.getElementById("formPurpose")?.setAttribute("value", "cost-sheet");
+function triggerCostSheetDownload(link) {
+  const pdfPath = link.getAttribute("data-pdf");
+  const purpose = link.getAttribute("data-purpose");
+
+  // Store the target PDF path globally
+  window._downloadAfterLead = pdfPath;
+
+  // Set hidden field in the modal form
+  document.getElementById("formPurpose")?.setAttribute("value", purpose);
+
+  // Open lead modal
   openModal();
 }
 
