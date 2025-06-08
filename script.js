@@ -339,4 +339,13 @@ function triggerCostSheetDownload(link) {
   openModal();
 }
 
+document.querySelectorAll(".nav-links li a").forEach(link => {
+  link.addEventListener("click", () => {
+    const navLinksContainer = document.getElementById("nav-links");
+    if (navLinksContainer.classList.contains("show")) {
+      navLinksContainer.classList.remove("show");
+    }
+  });
+});
+
 window.addEventListener("scroll", debounce(handleScrollSpy, 100));

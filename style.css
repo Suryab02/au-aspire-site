@@ -1642,17 +1642,36 @@ section {
   border-bottom: 2px solid #b30000;
 }
 @media (max-width: 768px) {
-  .price-table {
-    display: block;
+  .price-table-box {
+    width: 100%;
     overflow-x: auto;
-    min-width: 400px;
   }
 
-  .price-container {
-    max-width: 100%;
-    padding: 0 8px;
+  .price-table {
+    width: 100%;
+    min-width: 600px;
+    border-spacing: 0;
+  }
+
+  .price-table th, .price-table td {
+    padding: 12px;
+    font-size: 0.95rem;
+  }
+
+  .price-actions {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+  }
+
+  .whatsapp-price,
+  .price-btn,
+  .download-link {
+    width: 100%;
+    text-align: left;
   }
 }
+
 
 /* Navbar Container */
 .navbar {
